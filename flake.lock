@@ -1,0 +1,60 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1623875721,
+        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1624862269,
+        "narHash": "sha256-JFcsh2+7QtfKdJFoPibLFPLgIW6Ycnv8Bts9a7RYme0=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "f77036342e2b690c61c97202bf48f2ce13acc022",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-21.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs",
+        "s7-src": "s7-src"
+      }
+    },
+    "s7-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1625070926,
+        "narHash": "sha256-DHsIXnqx+h9CDfCa4xGtlV5a5tIb3X8/WiSbVPrT4uE=",
+        "ref": "master",
+        "rev": "711dfe3a06c15ac8b77c11f2c54a2e9f74def510",
+        "revCount": 261,
+        "type": "git",
+        "url": "https://cm-gitlab.stanford.edu/bil/s7.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://cm-gitlab.stanford.edu/bil/s7.git"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
