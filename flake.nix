@@ -30,26 +30,11 @@
 
           packages = flake-utils.lib.flattenTree { s7 = pkgs.s7; };
 
-          # apps.x86_64-linux = {
-          #   kinc-shader = { type = "app"; program = "${self.packages.x86_64-linux.kinc-shader}/bin/kinc-shader"; };
-          #   kinc-texture = { type = "app"; program = "${self.packages.x86_64-linux.kinc-texture}/bin/kinc-texture"; };
-          # };
-#          apps.kinc-shader = flake-utils.lib.mkApp { drv = packages.kinc-shader; };
-#          apps.kinc-texture = flake-utils.lib.mkApp { drv = packages.kinc-texture; };
-          apps.nrepl = flake-utils.lib.mkApp { drv = packages.nrepl; };
+          devShell = pkgs.mkShell {
+            buildInputs = with pkgs; [ s7 ];
+            inputsFrom = builtins.attrValues self.packages.${system};
+          };
 
-#          devShell = import ./devshell.nix { inherit pkgs; };
-          # devShell = pkgs.mkShell {
-          #   buildInputs = with haskellPackages; [
-          #     haskell-language-server
-          #     ghcid
-          #     cabal-install
-          #   ];
-          #   inputsFrom = builtins.attrValues self.packages.${system};
-          # };
-
-
-          checks = { };
         }
       )
     );

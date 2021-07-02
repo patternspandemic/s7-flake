@@ -39,7 +39,7 @@ let
   toDefineVal = b: if !b then "0" else "1";
 in
   stdenv.mkDerivation {
-    name = "s7"; # or, pname & version
+    name = "s7"; # or, pname & version (how to extract from s7.h?)
     src = s7-src;
 
     buildInputs = nreplLibs ++ otherLibs ++ (lib.optionals withGmp multiPrecisionLibs);
