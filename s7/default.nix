@@ -22,11 +22,18 @@
 , notcurses
 , pkg-config
 , utf8proc
+, disableDeprecated ? true
 , haveComplexNumbers ? true
 , haveComplexTrig ? true
+, withCLoader ? true
+, withExtraExponentMarkers ? false
 , withGmp ? true
-, s7Debugging ? false
+, withImmutableUnquote ? false
+, withMain ? false
 , withMultithreadChecks ? false
+, withPureS7 ? false
+, withSystemExtras ? true
+, s7Debugging ? false
 }:
 
 let
@@ -48,10 +55,17 @@ in
     buildPhase = ''
       # Create the s7 configuration header.
       cat << EOF > ./mus-config.h
+      #define DISABLE_DEPRECATED ${toDefineVal disableDeprecated}
       #define HAVE_COMPLEX_NUMBERS ${toDefineVal haveComplexNumbers}
       #define HAVE_COMPLEX_TRIG ${toDefineVal haveComplexTrig}
+      // #define WITH_C_LOADER ${toDefineVal withCLoader}
+      #define WITH_EXTRA_EXPONENT_MARKERS ${toDefineVal withExtraExponentMarkers}
       #define WITH_GMP ${toDefineVal withGmp}
+      #define WITH_IMMUTABLE_UNQUOTE ${toDefineVal withImmutableUnquote}
+      // #define WITH_MAIN ${toDefineVal withMain}
       #define WITH_MULTITHREAD_CHECKS ${toDefineVal withMultithreadChecks}
+      // #define WITH_PURE_S7 ${toDefineVal withPureS7}
+      // #define WITH_SYSTEM_EXTRAS ${toDefineVal withSystemExtras}
       #define S7_DEBUGGING ${toDefineVal s7Debugging}
       #define S7_LOAD_PATH "${builtins.placeholder "out"}/s7"
       EOF

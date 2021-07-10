@@ -17,11 +17,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1624862269,
-        "narHash": "sha256-JFcsh2+7QtfKdJFoPibLFPLgIW6Ycnv8Bts9a7RYme0=",
+        "lastModified": 1625692408,
+        "narHash": "sha256-e9L3TLLDVIJpMnHtiNHJE62oOh6emRtSZ244bgYJUZs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f77036342e2b690c61c97202bf48f2ce13acc022",
+        "rev": "c06613c25df3fe1dd26243847a3c105cf6770627",
         "type": "github"
       },
       "original": {
@@ -41,11 +41,11 @@
     "s7-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1625070926,
-        "narHash": "sha256-DHsIXnqx+h9CDfCa4xGtlV5a5tIb3X8/WiSbVPrT4uE=",
+        "lastModified": 1625823317,
+        "narHash": "sha256-hBIF7+4lK/xmjue+qJXO/LADVHK0+hI1pt3rGGWdg4Q=",
         "ref": "master",
-        "rev": "711dfe3a06c15ac8b77c11f2c54a2e9f74def510",
-        "revCount": 261,
+        "rev": "32c2fd432a94ec0dadbaf2ff81fe5844db281025",
+        "revCount": 269,
         "type": "git",
         "url": "https://cm-gitlab.stanford.edu/bil/s7.git"
       },

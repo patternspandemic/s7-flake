@@ -4,7 +4,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
     flake-utils.url = "github:numtide/flake-utils";
-    s7-src = { url = "git+https://cm-gitlab.stanford.edu/bil/s7.git"; flake = false; };
+    s7-src = {
+      url = "git+https://cm-gitlab.stanford.edu/bil/s7.git";
+      # url = "git+https://cm-gitlab.stanford.edu/bil/s7.git?ref=master&rev=97d888394d46f2e22cbfa1df37fbd4587eab3ab7";
+      flake = false; 
+    };
   };
 
   outputs = { self, nixpkgs, flake-utils, s7-src }:
