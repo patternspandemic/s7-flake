@@ -9,11 +9,15 @@
       # url = "git+https://cm-gitlab.stanford.edu/bil/s7.git?ref=master&rev=97d888394d46f2e22cbfa1df37fbd4587eab3ab7";
       flake = false; 
     };
+    s7-man = {
+      url = "github:mobileink/s7";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, s7-src }:
+  outputs = { self, nixpkgs, flake-utils, s7-src, s7-man }:
     {
-      overlay = import ./overlay.nix { inherit s7-src; };
+      overlay = import ./overlay.nix { inherit s7-src s7-man; };
     }
     //
     ( # TODO: Support other s7's other systems (freebsd, openbsd, osx, windows).

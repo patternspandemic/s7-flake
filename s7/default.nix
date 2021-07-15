@@ -12,6 +12,7 @@
 
 { stdenv, lib
 , s7-src
+, s7-man
 # , arb ?
 , gdb
 , gdbm
@@ -90,11 +91,13 @@ in
     '';
 
     installPhase = ''
-      mkdir -p $out/s7 $out/bin $out/lib $out/include
+      mkdir -p $out/s7 $out/bin $out/lib $out/include $out/man
       cp -r * $out/s7
       ln -s $out/s7/s7{d,i,n} $out/bin
       ln -s $out/s7/lib{c,dl,gdbm,gsl,m}_s7.so $out/s7/utf8proc_s7.so $out/lib
       ln -s $out/s7/s7.h $out/include
+
+      cp -r ${s7-man}/man/* $out/man
     '';
 
     meta = with lib; {
