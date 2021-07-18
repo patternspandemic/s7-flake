@@ -1,2 +1,2 @@
-# s7-flake
+* s7-flake
 Nix Flake for s7 Scheme
