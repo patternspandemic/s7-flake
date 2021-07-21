@@ -40,7 +40,7 @@
 
           devShell = pkgs.mkShell {
             buildInputs = with pkgs; [ s7 ];
-            inputsFrom = builtins.attrValues self.packages.${system};
+            #inputsFrom = builtins.attrValues self.packages.${system};
           };
 
         }
