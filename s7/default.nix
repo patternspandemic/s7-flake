@@ -85,9 +85,10 @@ EOF
       # Use the rpel to build *_s7.so libs.
       #   TODO: Make building *_s7.so libs more robust.
 #      for lib in libc.scm libdl.scm libgdbm.scm libgsl.scm libm.scm libutf8proc.scm
-#      do
-#        ./s7i $lib
-#      done
+      for lib in libc.scm libdl.scm
+      do
+        ./s7i $lib
+      done
 
       # Build s7 as a shared library.
       gcc s7.c -shared -o ./libs7.so -fpic -O2 -g -ldl -lm ${lib.optionalString withGmp gmpLdOpts} -Wl,-export-dynamic
@@ -98,7 +99,7 @@ EOF
       cp -r * $out/s7
       ln -s $out/s7/s7{d,i,n} $out/bin
 #      ln -s $out/s7/libs7.so $out/s7/lib{c,dl,gdbm,gsl,m}_s7.so $out/s7/utf8proc_s7.so $out/lib
-      ln -s $out/s7/libs7.so $out/lib
+      ln -s $out/s7/libs7.so $out/s7/lib{c,dl}_s7.so $out/lib
       ln -s $out/s7/s7.h $out/include
       cp -r ${s7-man}/man/* $out/man
     '';
