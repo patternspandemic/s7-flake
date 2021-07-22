@@ -58,20 +58,20 @@ in
     buildPhase = ''
       # Create the s7 configuration header.
       cat << EOF > ./mus-config.h
-      #define DISABLE_DEPRECATED ${toDefineVal disableDeprecated}
-      #define HAVE_COMPLEX_NUMBERS ${toDefineVal haveComplexNumbers}
-      #define HAVE_COMPLEX_TRIG ${toDefineVal haveComplexTrig}
-      // #define WITH_C_LOADER ${toDefineVal withCLoader}
-      #define WITH_EXTRA_EXPONENT_MARKERS ${toDefineVal withExtraExponentMarkers}
-      #define WITH_GMP ${toDefineVal withGmp}
-      #define WITH_IMMUTABLE_UNQUOTE ${toDefineVal withImmutableUnquote}
-      // #define WITH_MAIN ${toDefineVal withMain}
-      #define WITH_MULTITHREAD_CHECKS ${toDefineVal withMultithreadChecks}
-      // #define WITH_PURE_S7 ${toDefineVal withPureS7}
-      // #define WITH_SYSTEM_EXTRAS ${toDefineVal withSystemExtras}
-      #define S7_DEBUGGING ${toDefineVal s7Debugging}
-      #define S7_LOAD_PATH "${builtins.placeholder "out"}/s7"
-      EOF
+#define DISABLE_DEPRECATED ${toDefineVal disableDeprecated}
+#define HAVE_COMPLEX_NUMBERS ${toDefineVal haveComplexNumbers}
+#define HAVE_COMPLEX_TRIG ${toDefineVal haveComplexTrig}
+// #define WITH_C_LOADER ${toDefineVal withCLoader}
+#define WITH_EXTRA_EXPONENT_MARKERS ${toDefineVal withExtraExponentMarkers}
+#define WITH_GMP ${toDefineVal withGmp}
+#define WITH_IMMUTABLE_UNQUOTE ${toDefineVal withImmutableUnquote}
+// #define WITH_MAIN ${toDefineVal withMain}
+#define WITH_MULTITHREAD_CHECKS ${toDefineVal withMultithreadChecks}
+// #define WITH_PURE_S7 ${toDefineVal withPureS7}
+// #define WITH_SYSTEM_EXTRAS ${toDefineVal withSystemExtras}
+#define S7_DEBUGGING ${toDefineVal s7Debugging}
+#define S7_LOAD_PATH "${builtins.placeholder "out"}/s7"
+EOF
 
       # Build the dumb repl.
       gcc s7.c -o s7d -DWITH_MAIN -DWITH_C_LOADER=0 -I. -O2 -g -ldl -lm ${lib.optionalString withGmp gmpLdOpts} -Wl,-export-dynamic
@@ -101,7 +101,6 @@ in
       ln -s $out/s7/libs7.so $out/lib
       ln -s $out/s7/s7.h $out/include
       cp -r ${s7-man}/man/* $out/man
-
     '';
 
     meta = with lib; {
