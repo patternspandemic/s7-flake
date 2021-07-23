@@ -6,7 +6,7 @@
     flake-utils.url = "github:numtide/flake-utils";
     s7-src = {
       url = "git+https://cm-gitlab.stanford.edu/bil/s7.git";
-      #url = "git+https://cm-gitlab.stanford.edu/bil/s7.git?ref=master&rev=b0cc510b4d1a5be26a44188f94a05f1fd8f6293f";
+      #url = "git+https://cm-gitlab.stanford.edu/bil/s7.git?ref=master&rev="152073a8e91af4e88a749dd83abad8d68a9c23df;
       flake = false; 
     };
     s7-man = {
