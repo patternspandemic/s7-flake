@@ -1,6 +1,7 @@
 ### TODO
 #
 # Configure *cload-directory* - the dir for cload output.
+#           CLOAD_DIR
 #
 # Other possible perf opts used in timing:
 #   -march=native -fomit-frame-pointer -funroll-loops

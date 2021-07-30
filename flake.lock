@@ -42,11 +42,11 @@
     "s7-man": {
       "flake": false,
       "locked": {
-        "lastModified": 1626524643,
-        "narHash": "sha256-RiGrxdG47zxDup29VMx1J0rG4oa4T+yHPU+vEpQsZKQ=",
+        "lastModified": 1627497745,
+        "narHash": "sha256-R7q44mMEHxTdM4A9ZyLYK8rstIT22Iyat3AwD+8rU+E=",
         "owner": "mobileink",
         "repo": "s7",
-        "rev": "c52d864e164f10d1a73f77b5d74e67faaca8ba71",
+        "rev": "d0bf19114648d48e4b9655ecc8afef68441e0171",
         "type": "github"
       },
       "original": {
@@ -58,11 +58,11 @@
     "s7-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1627032003,
-        "narHash": "sha256-Hctt5fbg3zS10lbJ+SIgFkMgWUU3HKfPkl0kDBq3Bzw=",
+        "lastModified": 1627636996,
+        "narHash": "sha256-y/zkowi5EJQKgYWZlg/UO3yjpSskmDWo04TzGVsSSUs=",
         "ref": "master",
-        "rev": "152073a8e91af4e88a749dd83abad8d68a9c23df",
-        "revCount": 283,
+        "rev": "c7afad569eefbf3fe72d35590278cf3f76724ec2",
+        "revCount": 290,
         "type": "git",
         "url": "https://cm-gitlab.stanford.edu/bil/s7.git"
       },
