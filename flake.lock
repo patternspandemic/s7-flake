@@ -58,11 +58,11 @@
     "s7-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1627636996,
-        "narHash": "sha256-y/zkowi5EJQKgYWZlg/UO3yjpSskmDWo04TzGVsSSUs=",
+        "lastModified": 1627982961,
+        "narHash": "sha256-o/EngnHwNsNBLoXVC/3mxSzKgn459oi046J4+r6aGYE=",
         "ref": "master",
-        "rev": "c7afad569eefbf3fe72d35590278cf3f76724ec2",
-        "revCount": 290,
+        "rev": "fd23085489978d571e656574bd3adc713a4bf521",
+        "revCount": 295,
         "type": "git",
         "url": "https://cm-gitlab.stanford.edu/bil/s7.git"
       },
