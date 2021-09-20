@@ -3,6 +3,8 @@
 # Configure *cload-directory* - the dir for cload output.
 #           CLOAD_DIR
 #
+# Allow configurable INITIAL_HEAP_SIZE and other compile-time defaults.
+#
 # Other possible perf opts used in timing:
 #   -march=native -fomit-frame-pointer -funroll-loops
 # Other special files:
