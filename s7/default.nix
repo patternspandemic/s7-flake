@@ -83,6 +83,7 @@ EOF
       gcc s7.c -o s7i -DWITH_MAIN -I. -O2 -g -ldl -lm ${lib.optionalString withGmp gmpLdOpts} -Wl,-export-dynamic
       
       # Build the notcurses repl.
+      # FIXME: nrepl is missing proper load-path
       #gcc -o s7n s7.c -DWITH_MAIN -DWITH_NOTCURSES -O2 -I. -lm -ldl -lnotcurses-core ${lib.optionalString withGmp gmpLdOpts} -Wl,-export-dynamic
       gcc -c s7.c -O2 -I. -lm -ldl ${lib.optionalString withGmp gmpLdOpts} -Wl,-export-dynamic
       gcc -o s7n nrepl.c s7.o -lnotcurses-core -lm -I. -ldl ${lib.optionalString withGmp gmpLdOpts}
