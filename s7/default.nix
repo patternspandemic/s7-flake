@@ -1,5 +1,7 @@
 ### TODO
 #
+# - Restore nrepl build when notcurses version updated.
+#
 # Configure *cload-directory* - the dir for cload output.
 #           CLOAD_DIR
 #
@@ -85,8 +87,8 @@ EOF
       # Build the notcurses repl.
       # FIXME: nrepl is missing proper load-path
       #gcc -o s7n s7.c -DWITH_MAIN -DWITH_NOTCURSES -O2 -I. -lm -ldl -lnotcurses-core ${lib.optionalString withGmp gmpLdOpts} -Wl,-export-dynamic
-      gcc -c s7.c -O2 -I. -lm -ldl ${lib.optionalString withGmp gmpLdOpts} -Wl,-export-dynamic
-      gcc -o s7n nrepl.c s7.o -lnotcurses-core -lm -I. -ldl ${lib.optionalString withGmp gmpLdOpts}
+#      gcc -c s7.c -O2 -I. -lm -ldl ${lib.optionalString withGmp gmpLdOpts} -Wl,-export-dynamic
+#      gcc -o s7n nrepl.c s7.o -lnotcurses-core -lm -I. -ldl ${lib.optionalString withGmp gmpLdOpts}
 
       # Use the rpel to build *_s7.so libs.
       #   TODO: Make building *_s7.so libs more robust.
@@ -103,7 +105,8 @@ EOF
     installPhase = ''
       mkdir -p $out/s7 $out/bin $out/lib $out/include $out/man
       cp -r * $out/s7
-      ln -s $out/s7/s7{d,i,n} $out/bin
+#     ln -s $out/s7/s7{d,i,n} $out/bin
+      ln -s $out/s7/s7{d,i} $out/bin
 #      ln -s $out/s7/libs7.so $out/s7/lib{c,dl,gdbm,gsl,m}_s7.so $out/s7/utf8proc_s7.so $out/lib
       ln -s $out/s7/libs7.so $out/s7/lib{c,dl}_s7.so $out/lib
       ln -s $out/s7/s7.h $out/include
