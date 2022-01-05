@@ -2,11 +2,11 @@
   description = "s7 Scheme";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-21.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-21.11";
     flake-utils.url = "github:numtide/flake-utils";
     s7-src = {
       url = "git+https://cm-gitlab.stanford.edu/bil/s7.git";
-      #url = "git+https://cm-gitlab.stanford.edu/bil/s7.git?ref=master&rev="152073a8e91af4e88a749dd83abad8d68a9c23df;
+      #url = "git+https://cm-gitlab.stanford.edu/bil/s7.git?ref=master&rev="60797b15443179ce9f4ce5dcda82aa1951f1fd08";
       flake = false; 
     };
     s7-man = {
